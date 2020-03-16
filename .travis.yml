@@ -13,5 +13,4 @@ script:
 after_script:
     - ./cc-test-reporter format-coverage -d -t jacoco ./target/site/jacoco/jacoco.xml
     - ./cc-test-reporter upload-coverage -d
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+    - bash <(curl -s https://codecov.io/bash)
