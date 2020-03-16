@@ -1,4 +1,3 @@
 [![Build Status](https://travis-ci.org/mickulis/TestingJavaLab5.svg?branch=master)](https://travis-ci.org/mickulis/TestingJavaLab5)
 [![Maintainability](https://api.codeclimate.com/v1/badges/57a03e0c747c2e19448c/maintainability)](https://codeclimate.com/github/mickulis/TestingJavaLab5/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/57a03e0c747c2e19448c/test_coverage)](https://codeclimate.com/github/mickulis/TestingJavaLab5/test_coverage)
 [![codecov](https://codecov.io/gh/mickulis/TestingJavaLab5/branch/master/graph/badge.svg)](https://codecov.io/gh/mickulis/TestingJavaLab5)
