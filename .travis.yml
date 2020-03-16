@@ -2,15 +2,16 @@ language: java
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=6b0ded2ff675ef94479f6719d1a37eeaf10016c8e0b9fb9e94e289adab895f76
+    - CODECOV_TOKEN="f066d759-516e-4e3b-b755-0e8de424d15c"
+    - CC_TEST_REPORTER_ID="6b0ded2ff675ef94479f6719d1a37eeaf10016c8e0b9fb9e94e289adab895f76"
 before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
     - ./cc-test-reporter before-build
 script:
     - mvn test
-
-command:
-  -JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter
-  -format-coverage target/site/jacoco/jacoco.xml--input-type jacoco
-  -./cc-test-reporter upload-coverage
+after_script:
+    - ./cc-test-reporter format-coverage -d -t jacoco ./target/site/jacoco/jacoco.xml
+    - ./cc-test-reporter upload-coverage -d
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
