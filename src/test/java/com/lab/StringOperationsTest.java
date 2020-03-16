@@ -35,35 +35,60 @@ public class StringOperationsTest
 		Assertions.assertThrows(NullPointerException.class, () -> operation.reverse(null));
 	}
 
-//	@DisplayName("Concat strings operation")
-//	@ParameterizedTest(name = "{0} + {1} -> {2}")
-//	@CsvSource({
-//			"asdf, fdsa, asdffdsa",
-//			"1234567, , 1234567",
-//			", a, a",
-//			"a, , a",
-//			",,"
-//	})
-//	public void ConcatStringTest(String inputA, String inputB, String output)
-//	{
-//		Assertions.assertEquals(output, operation.concat(inputA, inputB));
-//	}
-//
-//	@Test
-//	public void ConcatTwoEmptyStringsTest()
-//	{
-//		Assertions.assertEquals("", operation.concat("", ""));
-//	}
-//
-//	@Test
-//	public void ConcatEmptyAndNonEmptyStringsTest()
-//	{
-//		Assertions.assertEquals("asdf", operation.concat("", "asdf"));
-//	}
-//
-//	@Test
-//	public void ConcatNonEmptyAndEmptyStringsTest()
-//	{
-//		Assertions.assertEquals("asdf", operation.concat("asdf", ""));
-//	}
+	@DisplayName("Concat strings operation")
+	@ParameterizedTest(name = "{0} + {1} -> {2}")
+	@CsvSource({
+			"asdf, fdsa, asdffdsa",
+			"1234567, , 1234567",
+			", a, a",
+			"a, , a",
+			",,"
+	})
+	public void ConcatStringTest(String inputA, String inputB, String output)
+	{
+		Assertions.assertEquals(output, operation.concat(inputA, inputB));
+	}
+
+	@Test
+	public void ConcatTwoEmptyStringsTest()
+	{
+		Assertions.assertEquals("", operation.concat("", ""));
+	}
+
+	@Test
+	public void ConcatEmptyAndNonEmptyStringsTest()
+	{
+		Assertions.assertEquals("asdf", operation.concat("", "asdf"));
+	}
+
+	@Test
+	public void ConcatNonEmptyAndEmptyStringsTest()
+	{
+		Assertions.assertEquals("asdf", operation.concat("asdf", ""));
+	}
+
+	@DisplayName("Palindrome string operation")
+	@ParameterizedTest(name = "{0} -> {1}")
+	@CsvSource({
+			"asdf, false",
+			"1234321, true",
+			"a, true",
+			"1212121, true"
+	})
+	public void IsPalindromeStringTest(String input, boolean output)
+	{
+		Assertions.assertEquals(output, operation.isPalindrome(input));
+	}
+
+	@Test
+	public void IsPalindromeEmptyStringTest()
+	{
+		Assertions.assertTrue(operation.isPalindrome(""));
+	}
+
+	@Test
+	public void IsPalindromeNullStringTest()
+	{
+		Assertions.assertThrows(NullPointerException.class, () -> operation.isPalindrome(null));
+	}
 }
