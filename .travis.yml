@@ -10,7 +10,7 @@ before_script:
 script:
     - mvn test
 
-JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter
-format-coverage target/site/jacoco/jacoco.xml
-  --input-type jacoco
-  ./cc-test-reporter upload-coverage
+command:
+  -JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter
+  -format-coverage target/site/jacoco/jacoco.xml--input-type jacoco
+  -./cc-test-reporter upload-coverage
