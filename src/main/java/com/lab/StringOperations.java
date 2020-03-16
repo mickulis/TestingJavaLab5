@@ -30,7 +30,6 @@ public class StringOperations
 		sb.append(a);
 		sb.append(b);
 		return sb.toString();
-
 	}
 
 	public boolean isPalindrome(String a)
