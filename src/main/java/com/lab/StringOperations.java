@@ -40,7 +40,6 @@ public class StringOperations
 		}
 		if (!((a.charAt(0) + "").equals(a.charAt(a.length() - 1) + "")))
 		{
-			System.out.println(a.charAt(0) + " " + a.charAt(a.length() - 1));
 			return false;
 		}
 		return isPalindrome(a.substring(1, a.length() - 1));
