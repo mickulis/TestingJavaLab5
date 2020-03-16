@@ -38,11 +38,12 @@ public class StringOperations
 		{
 			return true;
 		}
-		if (!(a.charAt(1) + "").equals(a.charAt(a.length() - 1) + ""))
+		if (!((a.charAt(0) + "").equals(a.charAt(a.length() - 1) + "")))
 		{
+			System.out.println(a.charAt(0) + " " + a.charAt(a.length() - 1));
 			return false;
 		}
-		return isPalindrome(a.substring(1, a.length() - 2));
+		return isPalindrome(a.substring(1, a.length() - 1));
 	}
 
 }
